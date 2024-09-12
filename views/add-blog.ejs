@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    
+    <h1 class="add-blog-title">Add a New Blog</h1>
+    <div class="add-blog-container">
+
+        <form action="/add-blog" method="POST" class="add-blog-form">
+            <label for="title" class="add-blog-label">Title:</label>
+            <input type="text" id="title" name="title" class="add-blog-input" required>
+
+            <label for="content" class="add-blog-label">Content:</label>
+            <textarea id="content" name="content" class="add-blog-textarea" required></textarea>
+
+            <div class="add-blog-buttons">
+                <a href="/" class="add-blog-back-btn">Back to Home</a>
+                <button type="submit" class="add-blog-button">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

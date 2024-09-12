@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <!-- Main content of the page -->
+    <div class="intro-container">
+        <div class="intro-image">
+            <img src="/images/intro5.jpg" alt="Intro Image">
+        </div>
+        <div class="intro-text">
+            <h1>Welcome to My Blog</h1>
+            <p>This website was built using Express js, Ejs, and Node js.</p>
+            <a href="/add-blog" class="add-blog">Add Blog</a>
+        </div>
+    </div>
+    <div class="cards_cont">
+        <h2 class="page-title">My Blogs</h2>
+
+        <% if (blogs.length === 0) { %>
+            <p>No blogs available.</p>
+        <% } else { %>
+            <div class="cards" id="blog-section">
+                <% blogs.forEach(blog => { %>
+                    <div class="card">
+                        <img src="<%= blog.image %>" alt="Blog Image" class="card-image">
+                        <div class="card-content">
+                            <h3><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h3>
+                            <p><%= blog.content.substring(0, 30) %>...</p>
+                            <div class="card-buttons">
+                                <a href="/blog/<%= blog.id %>" class="btn-view">
+                                    <button>View</button>
+                                </a>
+                                <a href="/edit-blog/<%= blog.id %>" class="btn-edit">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+   
+
+    <%- include('partials/footer') %>
+</body>
+</html>
