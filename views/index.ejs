@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
     <%- include('partials/navbar') %>
 
     <!-- Main content of the page -->
-    <div class="intro-container">
-        <div class="intro-image">
+    <div class="intro-container" data-aos="fade-up">
+        <div class="intro-image" data-aos="fade-right">
             <img src="/images/intro5.jpg" alt="Intro Image">
         </div>
         <div class="intro-text">
-            <h1>Welcome to My Blog</h1>
-            <p>This website was built using Express js, Ejs, and Node js.</p>
-            <a href="/add-blog" class="add-blog">Add Blog</a>
+            <h1 data-aos="fade-up" >Welcome to My Blog</h1>
+            <p data-aos="fade-left" data-aos-delay="300">This website was built using Express js, Ejs, and Node js.</p>
+            <a href="/add-blog" class="add-blog" data-aos="fade-up" data-aos-delay="600">Add Blog</a>
         </div>
     </div>
     <div class="cards_cont">
-        <h2 class="page-title">My Blogs</h2>
-
+        <h2 class="page-title" data-aos="fade-up" >My Blogs</h2>
+    
         <% if (blogs.length === 0) { %>
             <p>No blogs available.</p>
         <% } else { %>
-            <div class="cards" id="blog-section">
-                <% blogs.forEach(blog => { %>
-                    <div class="card">
+            <div class="cards" id="blog-section" >
+                <% blogs.forEach((blog, index) => { %>
+                    <div class="card" data-aos="fade-up" data-aos-delay="<%= index * 200 %>">
                         <img src="<%= blog.image %>" alt="Blog Image" class="card-image">
                         <div class="card-content">
                             <h3><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h3>
@@ -45,9 +46,16 @@
             </div>
         <% } %>
     </div>
-   
 
     <%- include('partials/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+          duration: 1200, 
+        });
+    </script>      
     <script src="/js/script.js"></script>
+
 </body>
 </html>

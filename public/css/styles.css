@@ -403,10 +403,12 @@ h2.page-title {
 /* <-----Blog Details-----> */
 
 .blog_container {
-    padding: 20px;
+    padding: 40px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
     min-height: 75vh;
+    background-color: #c3e55b;
+    border-radius: 10px;
 }
 
 .blog_title {
@@ -421,9 +423,9 @@ h2.page-title {
 .blog_content {
     font-size: 1.2em;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
     line-height: 1.6;
-    margin-bottom: 20px;
     white-space: pre-wrap; 
     text-align: center;
 }
@@ -448,13 +450,13 @@ h2.page-title {
 }
 
 .btn_back {
-    background-color: #E3FF5A;
-    color: black;
+    background-color: #333;
+    color: white;
     border: 1px solid #333;
 }
 
 .btn_back:hover {
-    background-color: #c3e55b;
+    background-color: #3c3c3c;
 }
 
 .btn_edit {
