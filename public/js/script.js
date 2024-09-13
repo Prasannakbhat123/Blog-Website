@@ -5,6 +5,6 @@ function toggleMenu() {
 }
 
 
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-AOS.init();
+// import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// AOS.init();
